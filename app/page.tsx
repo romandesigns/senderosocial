@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ModeToggle } from "@/components/site/features/ModeToggle";
 import { Site } from "@/components/site/layout";
 
 export default function Home() {

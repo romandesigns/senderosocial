@@ -1,11 +1,19 @@
-import React from "react";
-import { Navigation } from "../../Navigation";
+import { Navigation, Footer } from "@/components/site/layout";
 
-export function Site({ children }: { children: React.ReactNode }) {
+export function Site({
+  children,
+  navigation = true,
+  footer = true,
+}: {
+  children: React.ReactNode;
+  navigation?: boolean;
+  footer?: boolean;
+}) {
   return (
     <>
-      <Navigation />
+      {navigation && <Navigation />}
       {children}
+      {footer && <Footer />}
     </>
   );
 }
