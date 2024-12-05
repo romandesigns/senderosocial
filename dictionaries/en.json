@@ -1,0 +1,330 @@
+{
+  "site": {
+    "component": {
+      "navigation": {
+        "home": "Home",
+        "rooms": "Rooms",
+        "signIn": "Sign In",
+        "signUp": "Sign Up",
+        "signOut": "Sign Out"
+      },
+      "footer": {
+        "ctaText": "Report an Issue",
+        "mapHeading": "Find Us in Google Maps"
+      },
+      "themeMenu": {
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System"
+      },
+      "ui": {
+        "cta": {
+          "goBack": "Go Back"
+        },
+        "button": {
+          "exploreRooms": "Explore Rooms",
+          "contactUs": "Contact Us"
+        }
+      },
+      "page": {
+        "home": {
+          "header": {
+            "review": "Reviews",
+            "highlight": "In Salcedo, Dominican Republic",
+            "title": "Experience Unmatched Comfort and Elegance!",
+            "complementaryText": "Whether you&#39;re traveling solo, with family, or on a romantic escape, our thoughtfully designed rooms cater to every need",
+            "cta": "Visit us today!",
+            "buttonLeft": "Explore Rooms",
+            "buttonRight": "Contact Us!"
+          },
+          "testimonials": {
+            "heading": {
+              "title": "Don't Just Take Our Word For It",
+              "subtitle": "Hear directly from our happy guests!"
+            }
+          },
+          "discounts": {
+            "heading": {
+              "title": "Exclusive Discounts",
+              "subtitle": "The longer you stay, the more you save!"
+            },
+            "cards": {
+              "first_discount": {
+                "title": "Discount",
+                "description": "Get a 5% discount when you book a 5 day stay!"
+              },
+              "second_discount": {
+                "title": "Discount",
+                "description": "Enjoy an 8% discount when you book for 15 days or more!"
+              }
+            },
+            "cta": {
+              "text": "Take charge and book your dream stay today!",
+              "button": "Get Started"
+            }
+          },
+          "categories": {
+            "heading": {
+              "title": "Find Your Perfect Room",
+              "subtitle": "Choose the room that fits your style and book your stay today!"
+            },
+            "rooms": {
+              "basics": {
+                "btnText": "View Rooms",
+                "title": "Basic",
+                "description": "Perfect for solo travelers seeking simplicity and comfort.",
+                "slug": "basicas"
+              },
+              "doubles": {
+                "btnText": "View Rooms",
+                "title": "Double Room",
+                "description": "Ideal for pairs, offering ample space and cozy amenities.",
+                "slug": "dobles"
+              },
+              "standards": {
+                "btnText": "View Rooms",
+                "title": "Standard",
+                "description": "A well-balanced option with all essentials for a pleasant stay.",
+                "slug": "estandars"
+              },
+              "double_beds": {
+                "btnText": "View Rooms",
+                "title": "Double Bed",
+                "description": "Spacious double bed for a restful sleep after a day of exploration.",
+                "slug": "doble-camas"
+              },
+              "family": {
+                "btnText": "View Rooms",
+                "title": "Family",
+                "description": "Generous space designed for families to enjoy quality time together.",
+                "slug": "familiar"
+              },
+              "executives": {
+                "btnText": "View Rooms",
+                "title": "Executive",
+                "description": "Premium comfort for business travelers looking to unwind in style.",
+                "slug": "ejecutivas"
+              }
+            }
+          },
+          "surrounding": {
+            "heading": {
+              "title": "Unveil Our Scenic Spaces",
+              "subtitle": "Relax in our rooftop, serene hallways, and cozy common areas."
+            },
+            "cards": {
+              "first_card": {
+                "title": "Terrace",
+                "description": "Perfect for guest entertainment and private events."
+              },
+              "second_card": {
+                "title": "Common Areas",
+                "description": "Ensuring cleanliness and tranquility throughout."
+              }
+            },
+            "cta": {
+              "button": "Contact Us!"
+            }
+          },
+          "trending": {
+            "heading": {
+              "title": "Trending!",
+              "subtitle": "Explore our most popular rooms and book your stay today!"
+            }
+          },
+          "faq": {
+            "heading": {
+              "title": "Frequently Asked Questions",
+              "subtitle": "Find answers to common questions about our services."
+            },
+            "questions": [
+              {
+                "id": "item-1",
+                "question": "Do you provide food?",
+                "answer": "Yes, we provide food. To receive this service, you must include the food option in your reservation."
+              },
+              {
+                "id": "item-2",
+                "question": "Do you offer parking surveillance?",
+                "answer": "Yes, we provide surveillance for vehicles. Our parking lot is equipped with security cameras that monitor the perimeter of the hotel."
+              },
+              {
+                "id": "item-3",
+                "question": "Does the hotel have a pool?",
+                "answer": "Unfortunately, we don't have a pool yet. We are working on it and hope to have one soon."
+              },
+              {
+                "id": "item-4",
+                "question": "What are the main attractions near the hotel?",
+                "answer": "Our hotel is located in the heart of the city, near the beach, main shopping centers, tourist attractions, and the best restaurants and bars."
+              },
+              {
+                "id": "item-5",
+                "question": "What are the prices?",
+                "answer": "Prices vary depending on the type of room. We offer single, double, triple rooms, and suites. Rates range from $50 to $200 per night, with special prices for extended stays."
+              },
+              {
+                "id": "item-6",
+                "question": "What are the check-in and check-out times?",
+                "answer": "Check-in is available 24 hours a day, and check-out is at 11:00 AM on the last day of your stay."
+              },
+              {
+                "id": "item-7",
+                "question": "Do you allow pets?",
+                "answer": "Unfortunately, we do not allow pets."
+              },
+              {
+                "id": "item-8",
+                "question": "Is parking available?",
+                "answer": "Yes, we have parking available for our guests."
+              },
+              {
+                "id": "item-9",
+                "question": "Do you accept credit cards?",
+                "answer": "Yes, we accept credit cards and online payments."
+              },
+              {
+                "id": "item-10",
+                "question": "Do you provide payment receipts?",
+                "answer": "Yes, you can request a payment receipt at the reception."
+              }
+            ]
+          }
+        },
+        "rooms": {
+          "header": {
+            "highlight": "Explore Our Rooms!",
+            "title": "Select your ideal room!",
+            "complementaryText": "Discover the perfect space tailored to your needs, whether you're here to relax, work, or enjoy an unforgettable stay.",
+            "selectText": "Select Category",
+            "roomsCount": {
+              "showing": "Showing",
+              "rooms": "Rooms"
+            }
+          },
+          "roomsList": [
+            {
+              "id": 1,
+              "unitNumber": "101",
+              "slug": "basicas",
+              "title": "Basic Room",
+              "pricePerNight": 2550
+            },
+            {
+              "id": 2,
+              "unitNumber": "102",
+              "slug": "cama-dobles",
+              "title": "Double Bed Room",
+              "pricePerNight": 3700
+            },
+            {
+              "id": 3,
+              "unitNumber": "201",
+              "slug": "ejecutivas",
+              "title": "Executive Room",
+              "pricePerNight": 6840
+            },
+            {
+              "id": 4,
+              "unitNumber": "202",
+              "slug": "basicas",
+              "title": "Basic Room",
+              "pricePerNight": 2550
+            },
+            {
+              "id": 5,
+              "unitNumber": "203",
+              "slug": "estandars",
+              "title": "Standard Room",
+              "pricePerNight": 4250
+            },
+            {
+              "id": 6,
+              "unitNumber": "204",
+              "slug": "estandars",
+              "title": "Standard Room",
+              "pricePerNight": 4250
+            },
+            {
+              "id": 7,
+              "unitNumber": "301",
+              "slug": "ejecutivas",
+              "title": "Executive Room",
+              "pricePerNight": 6840
+            },
+            {
+              "id": 8,
+              "unitNumber": "302",
+              "slug": "familiar",
+              "title": "Family Room",
+              "pricePerNight": 5130
+            },
+            {
+              "id": 9,
+              "unitNumber": "401",
+              "slug": "ejecutivas",
+              "title": "Executive Room",
+              "pricePerNight": 6840
+            },
+            {
+              "id": 10,
+              "unitNumber": "402",
+              "slug": "cama-dobles",
+              "title": "Double Bed Room",
+              "pricePerNight": 3700
+            },
+            {
+              "id": 11,
+              "unitNumber": "403",
+              "slug": "dobles",
+              "title": "Double Room",
+              "pricePerNight": 4845
+            },
+            {
+              "id": 12,
+              "unitNumber": "404",
+              "slug": "dobles",
+              "title": "Double Room",
+              "pricePerNight": 4845
+            },
+            {
+              "id": 13,
+              "unitNumber": "501",
+              "slug": "estandars",
+              "title": "Standard Room",
+              "pricePerNight": 4250
+            },
+            {
+              "id": 14,
+              "unitNumber": "502",
+              "slug": "cama-dobles",
+              "title": "Double Bed Room",
+              "pricePerNight": 3700
+            },
+            {
+              "id": 15,
+              "unitNumber": "503",
+              "slug": "basicas",
+              "title": "Basic Room",
+              "pricePerNight": 2550
+            },
+            {
+              "id": 16,
+              "unitNumber": "504",
+              "slug": "dobles",
+              "title": "Double Room",
+              "pricePerNight": 4845
+            },
+            {
+              "id": 17,
+              "unitNumber": "505",
+              "slug": "dobles",
+              "title": "Double Room",
+              "pricePerNight": 4845
+            }
+          ]
+        }
+      }
+    }
+  }
+}

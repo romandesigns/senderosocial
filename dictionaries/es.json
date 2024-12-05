@@ -1,0 +1,330 @@
+{
+  "site": {
+    "component": {
+      "navigation": {
+        "home": "Inicio",
+        "rooms": "Habitaciones",
+        "signIn": "Iniciar sesión",
+        "signUp": "Registrarse",
+        "signOut": "Cerrar sesión"
+      },
+      "footer": {
+        "ctaText": "Reportar un problema",
+        "mapHeading": "Encuéntranos en Google Maps"
+      },
+      "themeMenu": {
+        "light": "Claro",
+        "dark": "Oscuro",
+        "system": "Sistema"
+      },
+      "ui": {
+        "cta": {
+          "goBack": "Regresar"
+        },
+        "button": {
+          "exploreRooms": "Explorar habitaciones",
+          "contactUs": "Contáctanos"
+        }
+      },
+      "page": {
+        "home": {
+          "header": {
+            "review": "Opiniones",
+            "highlight": "En Salcedo, República Dominicana",
+            "title": "Experimenta un confort y elegancia inigualables!",
+            "complementaryText": "Ya sea que viajes solo, con familia o en una escapada romántica, nuestras habitaciones están diseñadas cuidadosamente para satisfacer todas tus necesidades",
+            "cta": "Visítanos hoy!",
+            "buttonLeft": "Explorar Habitaciones",
+            "buttonRight": "Contáctanos!"
+          },
+          "testimonials": {
+            "heading": {
+              "title": "No solo tomes nuestra palabra",
+              "subtitle": "Escucha directamente a nuestros huéspedes felices!"
+            }
+          },
+          "discounts": {
+            "heading": {
+              "title": "Descuentos Exclusivos",
+              "subtitle": "Cuanto más tiempo te quedes, más ahorras!"
+            },
+            "cards": {
+              "first_discount": {
+                "title": "Descuento",
+                "description": "Obtén un 5% de descuento al reservar una estancia de 5 días."
+              },
+              "second_discount": {
+                "title": "Descuento",
+                "description": "Disfruta de un 8% de descuento al reservar por 15 días o más."
+              }
+            },
+            "cta": {
+              "text": "Toma el control y reserva tu estancia de ensueño hoy mismo!",
+              "button": "Comenzar"
+            }
+          },
+          "categories": {
+            "heading": {
+              "title": "Encuentra Tu Habitación Perfecta",
+              "subtitle": "Elige la habitación que se adapta a tu estilo y reserva tu estancia hoy mismo!"
+            },
+            "rooms": {
+              "basics": {
+                "btnText": "Ver Habitaciones",
+                "title": "Básica",
+                "description": "Perfecta para viajeros solos que buscan simplicidad y comodidad.",
+                "slug": "basicas"
+              },
+              "doubles": {
+                "btnText": "Ver Habitaciones",
+                "title": "Habitación Doble",
+                "description": "Ideal para parejas, con amplio espacio y comodidades acogedoras.",
+                "slug": "dobles"
+              },
+              "standards": {
+                "btnText": "Ver Habitaciones",
+                "title": "Estándar",
+                "description": "Una opción equilibrada con todos los esenciales para una estancia agradable.",
+                "slug": "standards"
+              },
+              "double_beds": {
+                "btnText": "Ver Habitaciones",
+                "title": "Cama Doble",
+                "description": "Cama doble espaciosa para un descanso reparador después de un día de exploración.",
+                "slug": "doble-camas"
+              },
+              "family": {
+                "btnText": "Ver Habitaciones",
+                "title": "Familiar",
+                "description": "Espacio generoso diseñado para que las familias disfruten tiempo de calidad juntas.",
+                "slug": "familiar"
+              },
+              "executives": {
+                "btnText": "Ver Habitaciones",
+                "title": "Ejecutiva",
+                "description": "Confort premium para viajeros de negocios que buscan relajarse con estilo.",
+                "slug": "ejecutivas"
+              }
+            }
+          },
+          "surrounding": {
+            "heading": {
+              "title": "Descubre Nuestros Espacios Escénicos",
+              "subtitle": "Relájate en nuestra azotea, pasillos tranquilos y acogedoras áreas comunes."
+            },
+            "cards": {
+              "first_card": {
+                "title": "Terraza",
+                "description": "Ideal para el entretenimiento de huéspedes y eventos privados."
+              },
+              "second_card": {
+                "title": "Áreas Comunes",
+                "description": "Asegurando limpieza y tranquilidad en todo momento."
+              }
+            },
+            "cta": {
+              "button": "Contáctanos!"
+            }
+          },
+          "trending": {
+            "heading": {
+              "title": "Tendencias!",
+              "subtitle": "Explora nuestras habitaciones más populares y reserva tu estancia hoy mismo!"
+            }
+          },
+          "faq": {
+            "heading": {
+              "title": "Preguntas Frecuentes",
+              "subtitle": "Encuentra respuestas a preguntas comunes sobre nuestros servicios."
+            },
+            "questions": [
+              {
+                "id": "item-1",
+                "question": "Ofrecen servicio de comida?",
+                "answer": "Sí, ofrecemos servicio de comida. Para recibir este servicio, debes incluir la opción de comida en tu reserva."
+              },
+              {
+                "id": "item-2",
+                "question": "Ofrecen vigilancia para el estacionamiento?",
+                "answer": "Sí, ofrecemos vigilancia para los vehículos. Nuestro estacionamiento está equipado con cámaras de seguridad que monitorean el perímetro del hotel."
+              },
+              {
+                "id": "item-3",
+                "question": "El hotel tiene piscina?",
+                "answer": "Lamentablemente, no contamos con piscina aún. Estamos trabajando en ello y esperamos tener una pronto."
+              },
+              {
+                "id": "item-4",
+                "question": "Cuáles son las principales atracciones cerca del hotel?",
+                "answer": "Nuestro hotel está ubicado en el corazón de la ciudad, cerca de la playa, los principales centros comerciales, atracciones turísticas y los mejores restaurantes y bares."
+              },
+              {
+                "id": "item-5",
+                "question": "Cuáles son los precios?",
+                "answer": "Los precios varían según el tipo de habitación. Ofrecemos habitaciones individuales, dobles, triples, y suites. Las tarifas van desde $50 hasta $200 por noche, con precios especiales para estancias prolongadas."
+              },
+              {
+                "id": "item-6",
+                "question": "Cuáles son los horarios de check-in y check-out?",
+                "answer": "El check-in está disponible las 24 horas del día, y el check-out es a las 11:00 AM del último día de tu estadía."
+              },
+              {
+                "id": "item-7",
+                "question": "Aceptan mascotas?",
+                "answer": "Lamentablemente, no aceptamos mascotas."
+              },
+              {
+                "id": "item-8",
+                "question": "Tienen estacionamiento disponible?",
+                "answer": "Sí, tenemos estacionamiento disponible para nuestros huéspedes."
+              },
+              {
+                "id": "item-9",
+                "question": "Aceptan tarjetas de crédito?",
+                "answer": "Sí, aceptamos tarjetas de crédito y pagos en línea."
+              },
+              {
+                "id": "item-10",
+                "question": "Entregan recibos de pago?",
+                "answer": "Sí, puedes solicitar un recibo de pago en la recepción."
+              }
+            ]
+          }
+        },
+        "rooms": {
+          "header": {
+            "highlight": "Explora Nuestras Habitaciones!",
+            "title": "Selecciona tu habitación ideal!",
+            "complementaryText": "Descubre el espacio perfecto adaptado a tus necesidades, ya sea para relajarte, trabajar o disfrutar de una estancia inolvidable.",
+            "selectText": "Selecciona categoría",
+            "roomsCount": {
+              "showing": "Mostrando",
+              "rooms": "Habitaciones"
+            }
+          },
+          "roomsList": [
+            {
+              "id": 1,
+              "unitNumber": "101",
+              "slug": "basica",
+              "title": "Habitación Básica",
+              "pricePerNight": 2550
+            },
+            {
+              "id": 2,
+              "unitNumber": "102",
+              "slug": "cama-doble",
+              "title": "Habitación Cama Doble",
+              "pricePerNight": 3700
+            },
+            {
+              "id": 3,
+              "unitNumber": "201",
+              "slug": "ejecutiva",
+              "title": "Habitación Ejecutiva",
+              "pricePerNight": 6840
+            },
+            {
+              "id": 4,
+              "unitNumber": "202",
+              "slug": "basica",
+              "title": "Habitación Básica",
+              "pricePerNight": 2550
+            },
+            {
+              "id": 5,
+              "unitNumber": "203",
+              "slug": "estandar",
+              "title": "Habitación Estándar",
+              "pricePerNight": 4250
+            },
+            {
+              "id": 6,
+              "unitNumber": "204",
+              "slug": "estandar",
+              "title": "Habitación Estándar",
+              "pricePerNight": 4250
+            },
+            {
+              "id": 7,
+              "unitNumber": "301",
+              "slug": "ejecutiva",
+              "title": "Habitación Ejecutiva",
+              "pricePerNight": 6840
+            },
+            {
+              "id": 8,
+              "unitNumber": "302",
+              "slug": "familiar",
+              "title": "Habitación Familiar",
+              "pricePerNight": 5130
+            },
+            {
+              "id": 9,
+              "unitNumber": "401",
+              "slug": "ejecutiva",
+              "title": "Habitación Ejecutiva",
+              "pricePerNight": 6840
+            },
+            {
+              "id": 10,
+              "unitNumber": "402",
+              "slug": "cama-doble",
+              "title": "Habitación Cama Doble",
+              "pricePerNight": 3700
+            },
+            {
+              "id": 11,
+              "unitNumber": "403",
+              "slug": "doble",
+              "title": "Habitación Doble",
+              "pricePerNight": 4845
+            },
+            {
+              "id": 12,
+              "unitNumber": "404",
+              "slug": "doble",
+              "title": "Habitación Doble",
+              "pricePerNight": 4845
+            },
+            {
+              "id": 13,
+              "unitNumber": "501",
+              "slug": "estandar",
+              "title": "Habitación Estándar",
+              "pricePerNight": 4250
+            },
+            {
+              "id": 14,
+              "unitNumber": "502",
+              "slug": "cama-doble",
+              "title": "Habitación Cama Doble",
+              "pricePerNight": 3700
+            },
+            {
+              "id": 15,
+              "unitNumber": "503",
+              "slug": "basica",
+              "title": "Habitación Básica",
+              "pricePerNight": 2550
+            },
+            {
+              "id": 16,
+              "unitNumber": "504",
+              "slug": "doble",
+              "title": "Habitación Doble",
+              "pricePerNight": 4845
+            },
+            {
+              "id": 17,
+              "unitNumber": "505",
+              "slug": "doble",
+              "title": "Habitación Doble",
+              "pricePerNight": 4845
+            }
+          ]
+        }
+      }
+    }
+  }
+}
