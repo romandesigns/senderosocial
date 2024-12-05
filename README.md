@@ -1,5 +1,5 @@
 ### Features
 
 [x] Localization
-[] Shadcn UI
+[x] Shadcn UI
 [] Postgresql + Drizzel
