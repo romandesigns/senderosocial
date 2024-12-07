@@ -1,7 +1,22 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { db } from "../lib/db/connection";
+import { usersTable } from "../lib/db/schema/users";
 
 export default async function Home() {
+  const users = await db
+    .insert(usersTable)
+    .values({
+      age: 25,
+      firstName: "John",
+      lastName: "Doe",
+      email: "tomato@gmail.com",
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    })
+    .execute();
+  console.log(users);
+
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
