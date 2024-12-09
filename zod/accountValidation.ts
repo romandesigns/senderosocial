@@ -8,6 +8,7 @@ export const AccountValidation = z
       message: "Invalid date format",
     }), // ISO date string validation
     role: z.string().min(2),
+    lang: z.string().min(8),
     email: z.string().email(),
     password: z
       .string()
@@ -18,11 +19,9 @@ export const AccountValidation = z
       .refine((val) => /[!@#$%^&*(),.?":{}|<>]/.test(val), {
         message: "Password must include at least one symbol",
       }),
-    confirmPassword: z
-      .string()
-      .min(10, {
-        message: "Confirm password must be at least 10 characters long",
-      }),
+    confirmPassword: z.string().min(10, {
+      message: "Confirm password must be at least 10 characters long",
+    }),
     createdOn: z.string().refine((val) => !isNaN(Date.parse(val)), {
       message: "Invalid date format",
     }), // ISO date string validation

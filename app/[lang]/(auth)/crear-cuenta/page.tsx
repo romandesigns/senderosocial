@@ -33,8 +33,9 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import Form from "next/form";
+import { redirect } from "next/navigation";
 
-async function createAccountAction(formData: FormData) {
+export async function createAccountAction(formData: FormData) {
   "use server";
   const payload = {
     name: formData.get("name") as string,
@@ -47,19 +48,32 @@ async function createAccountAction(formData: FormData) {
     createdOn: new Date().toISOString(),
     phoneVerified: false,
     emailVerified: false,
+    locale: formData.get("lang") as string,
   };
-
-  try {
-    AccountValidation.parse(payload);
-    console.log("Validation successful!");
-  } catch (e: any) {
-    const extractedErrors =
-      e.errors?.map((err: { message: string }) => err.message) || [];
-    console.error(extractedErrors);
+  const result = AccountValidation.safeParse(payload);
+  if (!result.success) {
+    // Extract error messages
+    const errors = result.error.errors.map((err) => err.message);
+    const queryParams = new URLSearchParams({
+      errors: JSON.stringify(errors),
+      values: JSON.stringify(payload),
+    });
+    // Redirect with errors and submitted values
+    redirect(`/en/crear-cuenta?${queryParams}`);
   }
+  // Redirect on successful validation
+  redirect("/success");
 }
 
-export default function Page({ lang }: { lang: Locale }) {
+export default async function Page({
+  lang,
+  searchParams,
+}: {
+  lang: Locale;
+  searchParams: Promise<{ errors: any; values: any }>;
+}) {
+  const errorParams = await searchParams;
+  console.log(errorParams, "params");
   return (
     <>
       <section className="h-screen w-screen flex justify-stretch items-stretch">
@@ -136,6 +150,13 @@ export default function Page({ lang }: { lang: Locale }) {
                     placeholder="&bull; &bull; &bull; &bull; &bull; &bull;"
                   />
                 </Label>
+                <Input
+                  type="text"
+                  name="lang"
+                  value={lang}
+                  readOnly
+                  className="hidden"
+                />
               </CardContent>
               <CardFooter>
                 <Button size="block" type="submit">
