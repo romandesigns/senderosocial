@@ -2,4 +2,8 @@
 
 [x] Localization
 [x] Shadcn UI
-[] Postgresql + Drizzel
+[x] Postgresql + Drizzel
+
+#### Pages
+
+[] Sign Up
