@@ -88,75 +88,89 @@ export default async function Page({
                 </CardDescription>
               </CardHeader>
 
-              <CardContent>
-                {/* User Name and Last name */}
-                <Group classNames="gap-2">
-                  <Label className="flex-1">
-                    <p className="py-1 text-sm text-muted-foreground">Nombre</p>
-                    <Input type="text" name="name" />
-                  </Label>
-                  <Label className="flex-1">
-                    <p className="py-1 text-sm text-muted-foreground">
-                      Apellido
+              <CardContent className="flex flex-col gap-4">
+                <fieldset className="p-2 py-4">
+                  <legend className="text-xs bg-muted text-muted-foreground p-1 px-2 text-right">
+                    Informacion de Usuario
+                  </legend>
+                  {/* User Name and Last name */}
+                  <Group classNames="gap-2 mb-2">
+                    <Label className="flex-1">
+                      <p className="py-1 text-sm text-muted-foreground">
+                        Nombre
+                      </p>
+                      <Input type="text" name="name" />
+                    </Label>
+                    <Label className="flex-1">
+                      <p className="py-1 text-sm text-muted-foreground">
+                        Apellido
+                      </p>
+                      <Input type="text" name="lastName" />
+                    </Label>
+                  </Group>
+                  <DatePicker
+                    lang={lang}
+                    name="dateOfBirth"
+                    direction="left"
+                    classNames="block"
+                  />
+                </fieldset>
+                <fieldset className="p-2 py-4">
+                  <legend className="text-xs bg-muted text-muted-foreground p-1 px-2 text-right">
+                    Informacion de Cuenta
+                  </legend>
+                  {/* User Role */}
+                  <Label className="block mb-3">
+                    <p className="pb-1 text-sm text-muted-foreground">
+                      Rol de usuario
                     </p>
-                    <Input type="text" name="lastName" />
+                    <Select name="role">
+                      <SelectTrigger>
+                        <SelectValue placeholder="Seleccione rol" />
+                      </SelectTrigger>
+                      <SelectContent className="w-full">
+                        <SelectItem value="organizer">Organizador</SelectItem>
+                        <SelectItem value="participant">
+                          Participante
+                        </SelectItem>
+                      </SelectContent>
+                    </Select>
                   </Label>
-                </Group>
-                <DatePicker
-                  lang={lang}
-                  name="dateOfBirth"
-                  direction="left"
-                  classNames="my-4 block"
-                />
-                {/* User Role */}
-                <Label className="my-4 block">
-                  <p className="pb-1 text-sm text-muted-foreground">
-                    Rol de usuario
-                  </p>
-                  <Select name="role">
-                    <SelectTrigger>
-                      <SelectValue placeholder="Seleccione rol" />
-                    </SelectTrigger>
-                    <SelectContent className="w-full">
-                      <SelectItem value="organizer">Organizador</SelectItem>
-                      <SelectItem value="participant">Participante</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </Label>
-                {/* User Email */}
-                <Label className="flex-1">
-                  <p className="pb-1 text-sm text-muted-foreground">Email</p>
-                  <Input type="email" name="email" />
-                </Label>
-                {/* User Password */}
-                <Label className="flex-1">
-                  <p className="py-1 text-sm text-muted-foreground">
-                    Contraseña
-                  </p>
+                  {/* User Email */}
+                  <Label className="flex-1 mb-2 block">
+                    <p className="pb-1 text-sm text-muted-foreground">Email</p>
+                    <Input type="email" name="email" />
+                  </Label>
+                  {/* User Password */}
+                  <Label className="flex-1 mb-2 block">
+                    <p className="py-1 text-sm text-muted-foreground">
+                      Contraseña
+                    </p>
+                    <Input
+                      name="password"
+                      type="password"
+                      placeholder="&bull; &bull; &bull; &bull; &bull; &bull;"
+                    />
+                  </Label>
+                  {/* User Password Confirm */}
+                  <Label className="flex-1 mb-2 block">
+                    <p className="py-1 text-sm text-muted-foreground">
+                      Confirma Contraseña
+                    </p>
+                    <Input
+                      name="confirmPassword"
+                      type="password"
+                      placeholder="&bull; &bull; &bull; &bull; &bull; &bull;"
+                    />
+                  </Label>
                   <Input
-                    name="password"
-                    type="password"
-                    placeholder="&bull; &bull; &bull; &bull; &bull; &bull;"
+                    type="text"
+                    name="lang"
+                    value={lang}
+                    readOnly
+                    className="hidden"
                   />
-                </Label>
-                {/* User Password Confirm */}
-                <Label className="flex-1">
-                  <p className="py-1 text-sm text-muted-foreground">
-                    Confirma Contraseña
-                  </p>
-                  <Input
-                    name="confirmPassword"
-                    type="password"
-                    placeholder="&bull; &bull; &bull; &bull; &bull; &bull;"
-                  />
-                </Label>
-                <Input
-                  type="text"
-                  name="lang"
-                  value={lang}
-                  readOnly
-                  className="hidden"
-                />
+                </fieldset>
               </CardContent>
               <CardFooter>
                 <Button size="block" type="submit">

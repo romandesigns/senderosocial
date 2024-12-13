@@ -124,7 +124,9 @@ export function DatePicker({
               <div className="flex w-full gap-2">
                 <ScrollArea className="col-span-3 row-span-2 h-72 px-3">
                   <div className="grid grid-cols-1 grid-rows-3 grid-flow-row relative">
-                    <p className="text-center top-0 left-0 right-0">Mes</p>
+                    <p className="text-center top-0 left-0 right-0 font-bold">
+                      Mes
+                    </p>
                     {getAllMonths(lang === "es" ? es : enUS).map(
                       (monthName, i) => (
                         <Button
@@ -146,7 +148,9 @@ export function DatePicker({
                 </ScrollArea>
                 <ScrollArea className="col-span-3 row-span-2 h-72 px-3">
                   <div className="grid grid-cols-1 grid-rows-3 grid-flow-row relative">
-                    <p className="text-center top-0 left-0 right-0">Day</p>
+                    <p className="text-center top-0 left-0 right-0 font-bold">
+                      Day
+                    </p>
                     {getDaysOfMonth(now.getFullYear(), now.getMonth() + 1).map(
                       (dayValue, i) => (
                         <Button
@@ -168,7 +172,9 @@ export function DatePicker({
                 </ScrollArea>
                 <ScrollArea className="col-span-3 row-span-2 h-72 px-3">
                   <div className="grid grid-cols-1 grid-rows-3 grid-flow-row relative">
-                    <p className="text-center top-0 left-0 right-0">Año</p>
+                    <p className="text-center top-0 left-0 right-0 font-bold">
+                      Año
+                    </p>
                     {getYearsRange().map((yearValue) => (
                       <Button
                         key={yearValue}
