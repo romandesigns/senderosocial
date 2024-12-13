@@ -4,17 +4,14 @@ import "./globals.css";
 import { i18n, Locale } from "@/i18n-config";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import { ModeToggle } from "@/components/ui/ThemeToggle";
+import { poppins } from "./fonts";
+// import { Poppins } from "next/font/google";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+// const poppins = Poppins({
+//   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+//   display: "swap",
+
+// });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -45,9 +42,7 @@ export default async function RootLayout({
 
   return (
     <html lang={lang} suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${poppins.className} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

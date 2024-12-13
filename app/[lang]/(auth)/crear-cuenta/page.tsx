@@ -34,6 +34,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import Form from "next/form";
 import { redirect } from "next/navigation";
+import Link from "next/link";
 
 export async function createAccountAction(formData: FormData) {
   "use server";
@@ -48,8 +49,10 @@ export async function createAccountAction(formData: FormData) {
     createdOn: new Date().toISOString(),
     phoneVerified: false,
     emailVerified: false,
-    locale: formData.get("lang") as string,
+    locale: formData.get("locale") as string,
   };
+
+  console.log(payload);
   const result = AccountValidation.safeParse(payload);
   if (!result.success) {
     // Extract error messages
@@ -66,14 +69,18 @@ export async function createAccountAction(formData: FormData) {
 }
 
 export default async function Page({
-  lang,
+  params,
   searchParams,
 }: {
-  lang: Locale;
+  params: Promise<{ lang: Locale }>;
   searchParams: Promise<{ errors: any; values: any }>;
 }) {
   const errorParams = await searchParams;
-  console.log(errorParams, "params");
+  const { lang } = await params;
+  const { errors, values } = errorParams;
+  const formValues = JSON.parse(values);
+  const formErrors = JSON.parse(errors);
+
   return (
     <>
       <section className="h-screen w-screen flex justify-stretch items-stretch">
@@ -82,13 +89,15 @@ export default async function Page({
           <Card className="max-w-lg mx-auto">
             <Form action={createAccountAction}>
               <CardHeader>
-                <CardTitle className="font-black">Crear cuenta</CardTitle>
+                <CardTitle className="font-bold text-2xl">
+                  Crear cuenta
+                </CardTitle>
                 <CardDescription>
                   Regístrate para acceder a dashboard
                 </CardDescription>
               </CardHeader>
 
-              <CardContent className="flex flex-col gap-4">
+              <CardContent className="flex flex-col gap-4 pb-0">
                 <fieldset className="p-2 py-4">
                   <legend className="text-xs bg-muted text-muted-foreground p-1 px-2 text-right">
                     Informacion de Usuario
@@ -96,16 +105,24 @@ export default async function Page({
                   {/* User Name and Last name */}
                   <Group classNames="gap-2 mb-2">
                     <Label className="flex-1">
-                      <p className="py-1 text-sm text-muted-foreground">
+                      <p className="py-1 text-muted-foreground text-xs">
                         Nombre
                       </p>
-                      <Input type="text" name="name" />
+                      <Input
+                        type="text"
+                        name="name"
+                        defaultValue={formValues.name || ""}
+                      />
                     </Label>
                     <Label className="flex-1">
-                      <p className="py-1 text-sm text-muted-foreground">
+                      <p className="py-1 text-xs text-muted-foreground">
                         Apellido
                       </p>
-                      <Input type="text" name="lastName" />
+                      <Input
+                        type="text"
+                        name="lastName"
+                        defaultValue={formValues.lastName || ""}
+                      />
                     </Label>
                   </Group>
                   <DatePicker
@@ -121,10 +138,10 @@ export default async function Page({
                   </legend>
                   {/* User Role */}
                   <Label className="block mb-3">
-                    <p className="pb-1 text-sm text-muted-foreground">
+                    <p className="pb-1 text-xs text-muted-foreground">
                       Rol de usuario
                     </p>
-                    <Select name="role">
+                    <Select name="role" defaultValue={formValues.role || ""}>
                       <SelectTrigger>
                         <SelectValue placeholder="Seleccione rol" />
                       </SelectTrigger>
@@ -138,12 +155,16 @@ export default async function Page({
                   </Label>
                   {/* User Email */}
                   <Label className="flex-1 mb-2 block">
-                    <p className="pb-1 text-sm text-muted-foreground">Email</p>
-                    <Input type="email" name="email" />
+                    <p className="pb-1 text-xs text-muted-foreground">Email</p>
+                    <Input
+                      type="email"
+                      name="email"
+                      defaultValue={formValues.email || ""}
+                    />
                   </Label>
                   {/* User Password */}
                   <Label className="flex-1 mb-2 block">
-                    <p className="py-1 text-sm text-muted-foreground">
+                    <p className="py-1 text-xs text-muted-foreground">
                       Contraseña
                     </p>
                     <Input
@@ -154,7 +175,7 @@ export default async function Page({
                   </Label>
                   {/* User Password Confirm */}
                   <Label className="flex-1 mb-2 block">
-                    <p className="py-1 text-sm text-muted-foreground">
+                    <p className="py-1 text-xs text-muted-foreground">
                       Confirma Contraseña
                     </p>
                     <Input
@@ -162,22 +183,29 @@ export default async function Page({
                       type="password"
                       placeholder="&bull; &bull; &bull; &bull; &bull; &bull;"
                     />
+                    <Input
+                      type="text"
+                      name="locale"
+                      value={lang}
+                      readOnly
+                      className="hidden"
+                    />
                   </Label>
-                  <Input
-                    type="text"
-                    name="lang"
-                    value={lang}
-                    readOnly
-                    className="hidden"
-                  />
                 </fieldset>
               </CardContent>
-              <CardFooter>
-                <Button size="block" type="submit">
-                  Crear cuenta
-                </Button>
+              <CardFooter className="">
+                <Button size="block">Crear cuenta</Button>
               </CardFooter>
             </Form>
+            <Group classNames="w-full  gap-2 px-6 pb-4 text-xs">
+              <p>Ya tienes cuenta?</p>
+              <Link
+                href="/en/iniciar-session"
+                className="text-blue-700 underline"
+              >
+                Iniciar Session
+              </Link>
+            </Group>
           </Card>
         </article>
       </section>

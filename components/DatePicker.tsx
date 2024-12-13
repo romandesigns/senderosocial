@@ -1,23 +1,23 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { cx } from "class-variance-authority";
 import {
-  format,
-  eachDayOfInterval,
-  startOfMonth,
-  endOfMonth,
   differenceInYears,
+  eachDayOfInterval,
+  endOfMonth,
+  format,
+  startOfMonth,
 } from "date-fns";
 import { enUS, es } from "date-fns/locale";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Label } from "./ui/label";
-import { cx } from "class-variance-authority";
+import { useEffect, useState } from "react";
 import { Input } from "./ui/input";
+import { Label } from "./ui/label";
 
 const now = new Date();
 
@@ -85,11 +85,11 @@ export function DatePicker({
   return (
     <Label className={cx(classNames)}>
       <div className="flex justify-between items-center">
-        <p className="py-1 text-sm text-muted-foreground">
+        <p className="py-1 text-xs text-muted-foreground">
           Fecha de Nacimiento
         </p>
         {showAge ? (
-          <p className="text-sm text-muted-foreground">Edad: {age || "--"}</p>
+          <p className="text-xs text-muted-foreground">Edad: {age || "--"}</p>
         ) : (
           <div />
         )}
