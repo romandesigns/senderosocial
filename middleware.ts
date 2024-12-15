@@ -38,5 +38,5 @@ export function middleware(request: NextRequest) {
 // Updated matcher to exclude specific paths including public assets
 // Updated matcher to exclude specific paths including public assets
 export const config = {
-  matcher: ["/((?!api|_next|public|favicon.ico|assets|manifest.json).*)"],
+  matcher: ["/((?!api|_next|public|favicon.ico|assets|flags|manifest.json).*)"],
 };

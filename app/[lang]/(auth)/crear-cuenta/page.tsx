@@ -1,4 +1,5 @@
 // import { createAccountAction } from "@/actions";
+import { createAccountAction } from "@/actions";
 import { DatePicker } from "@/components/DatePicker";
 import { Group } from "@/components/Group";
 import { Button } from "@/components/ui/button";
@@ -20,86 +21,62 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Locale } from "@/i18n-config";
-import { AccountValidation } from "@/zod";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
 import Form from "next/form";
-import { redirect } from "next/navigation";
+import { headers } from "next/headers";
 import Link from "next/link";
-
-export async function createAccountAction(formData: FormData) {
-  "use server";
-  const payload = {
-    name: formData.get("name") as string,
-    lastName: formData.get("lastName") as string,
-    dateOfBirth: formData.get("dateOfBirth") as string,
-    role: formData.get("role") as string,
-    email: formData.get("email") as string,
-    password: formData.get("password") as string,
-    confirmPassword: formData.get("confirmPassword") as string,
-    createdOn: new Date().toISOString(),
-    phoneVerified: false,
-    emailVerified: false,
-    locale: formData.get("locale") as string,
-  };
-
-  console.log(payload);
-  const result = AccountValidation.safeParse(payload);
-  if (!result.success) {
-    // Extract error messages
-    const errors = result.error.errors.map((err) => err.message);
-    const queryParams = new URLSearchParams({
-      errors: JSON.stringify(errors),
-      values: JSON.stringify(payload),
-    });
-    // Redirect with errors and submitted values
-    redirect(`/en/crear-cuenta?${queryParams}`);
-  }
-  // Redirect on successful validation
-  redirect("/success");
-}
 
 export default async function Page({
   params,
   searchParams,
 }: {
   params: Promise<{ lang: Locale }>;
-  searchParams: Promise<{ errors: any; values: any }>;
+  searchParams: Promise<{
+    errors: any;
+    values: any;
+    verificacion: string;
+    opt: string;
+  }>;
 }) {
-  const errorParams = await searchParams;
+  const { errors, values, verificacion, opt } = await searchParams;
   const { lang } = await params;
-  const { errors, values } = errorParams;
-  const formValues = JSON.parse(values);
-  const formErrors = JSON.parse(errors);
+  // Get COUNTRY CODE from headers
+  const siteHeaders = await headers();
+  const countryCode = siteHeaders
+    .get("accept-language")
+    ?.split(",")[0] // Get the first preferred language
+    ?.split("-")[1] // Extract the country code part (e.g., "US" from "en-US")
+    ?.toUpperCase(); // Ensure uppercase (e.g., "us" -> "US")
+
+  const payload = {
+    name: "Roman",
+    lastName: "Feliz Martinez",
+    dateOfBirth: "1946-01-02T00:00:00.000Z",
+    role: "organizer",
+    email: "roman.feliz@comsol.com",
+    password: "@Corina1987",
+    confirmPassword: "@Corina1987",
+    createdOn: "2024-12-14T00:46:49.107Z",
+    phoneVerified: false,
+    emailVerified: false,
+    locale: "en",
+  };
 
   return (
     <>
-      <section className="h-screen w-screen flex justify-stretch items-stretch">
+      <section className="h-screen w-screen flex justify-stretch items-stretch p-2">
         {/* <article className="bg-neutral-100 flex-1">Image Gallery</article> */}
-        <article className="bg-neutral-200 flex-1 flex items-center justify-center">
-          <Card className="max-w-lg mx-auto">
+        <article className="flex-1 flex items-center justify-center">
+          <Card className="w-full max-w-[27.3rem] overflow-hidden">
+            <CardHeader>
+              <CardTitle className="font-bold text-2xl">Crear cuenta</CardTitle>
+              <CardDescription>
+                Regístrate para acceder a dashboard
+              </CardDescription>
+            </CardHeader>
             <Form action={createAccountAction}>
-              <CardHeader>
-                <CardTitle className="font-bold text-2xl">
-                  Crear cuenta
-                </CardTitle>
-                <CardDescription>
-                  Regístrate para acceder a dashboard
-                </CardDescription>
-              </CardHeader>
-
               <CardContent className="flex flex-col gap-4 pb-0">
-                <fieldset className="p-2 py-4">
-                  <legend className="text-xs bg-muted text-muted-foreground p-1 px-2 text-right">
+                <fieldset className="p-2">
+                  <legend className="text-xs bg-muted text-muted-foreground p-1 px-2 mb-3 text-right hidden">
                     Informacion de Usuario
                   </legend>
                   {/* User Name and Last name */}
@@ -111,7 +88,7 @@ export default async function Page({
                       <Input
                         type="text"
                         name="name"
-                        defaultValue={formValues.name || ""}
+                        defaultValue={payload.name}
                       />
                     </Label>
                     <Label className="flex-1">
@@ -121,7 +98,7 @@ export default async function Page({
                       <Input
                         type="text"
                         name="lastName"
-                        defaultValue={formValues.lastName || ""}
+                        defaultValue={payload.lastName}
                       />
                     </Label>
                   </Group>
@@ -132,8 +109,8 @@ export default async function Page({
                     classNames="block"
                   />
                 </fieldset>
-                <fieldset className="p-2 py-4">
-                  <legend className="text-xs bg-muted text-muted-foreground p-1 px-2 text-right">
+                <fieldset className="p-2">
+                  <legend className="text-xs bg-muted text-muted-foreground p-1 px-2 mb-3 text-right hidden">
                     Informacion de Cuenta
                   </legend>
                   {/* User Role */}
@@ -141,7 +118,7 @@ export default async function Page({
                     <p className="pb-1 text-xs text-muted-foreground">
                       Rol de usuario
                     </p>
-                    <Select name="role" defaultValue={formValues.role || ""}>
+                    <Select name="role" defaultValue={payload.role}>
                       <SelectTrigger>
                         <SelectValue placeholder="Seleccione rol" />
                       </SelectTrigger>
@@ -159,7 +136,7 @@ export default async function Page({
                     <Input
                       type="email"
                       name="email"
-                      defaultValue={formValues.email || ""}
+                      defaultValue={payload.email}
                     />
                   </Label>
                   {/* User Password */}
@@ -171,6 +148,7 @@ export default async function Page({
                       name="password"
                       type="password"
                       placeholder="&bull; &bull; &bull; &bull; &bull; &bull;"
+                      defaultValue={payload.password}
                     />
                   </Label>
                   {/* User Password Confirm */}
@@ -182,6 +160,7 @@ export default async function Page({
                       name="confirmPassword"
                       type="password"
                       placeholder="&bull; &bull; &bull; &bull; &bull; &bull;"
+                      defaultValue={payload.confirmPassword}
                     />
                     <Input
                       type="text"

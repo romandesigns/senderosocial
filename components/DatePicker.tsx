@@ -41,7 +41,7 @@ function getDaysOfMonth(year: number, month: number, locale = enUS) {
 function getYearsRange(back = 80) {
   const currentYear = new Date().getFullYear();
   const startYear = currentYear - back;
-  return Array.from({ length: back + 1 }, (_, i) => startYear + i);
+  return Array.from({ length: back + 1 }, (_, i) => currentYear - i);
 }
 
 export function DatePicker({

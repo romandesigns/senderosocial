@@ -5,13 +5,7 @@ import { i18n, Locale } from "@/i18n-config";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import { ModeToggle } from "@/components/ui/ThemeToggle";
 import { poppins } from "./fonts";
-// import { Poppins } from "next/font/google";
-
-// const poppins = Poppins({
-//   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-//   display: "swap",
-
-// });
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -50,6 +44,7 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
